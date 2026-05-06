@@ -13,6 +13,12 @@ public class Test extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String fullname = request.getParameter("fullname");
+		String address = request.getParameter("address");
+
+		System.out.println("fullname: " + fullname);
+		System.out.println("address: " + address);
+
 	}
 
 }
