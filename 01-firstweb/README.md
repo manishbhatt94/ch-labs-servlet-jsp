@@ -83,4 +83,14 @@ Note: We have just one Servlet created as of now in `src/main/java/com.controlle
       <em>Figure: Directory Structure of 'Dynamic Web Project' - Eclipse Project Explorer</em>
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-05-dir-struct-raw.png" 
+           alt="Directory Structure of 'Dynamic Web Project' - Raw" 
+           title="Directory Structure of 'Dynamic Web Project' - Raw" 
+           width="360" height="594">
+      <br />
+      <em>Figure: Directory Structure of 'Dynamic Web Project' - Raw</em>
+    </td>
+  </tr>
 </table>
