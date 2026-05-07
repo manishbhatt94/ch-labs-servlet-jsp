@@ -1,7 +1,6 @@
 package com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,12 +21,15 @@ public class Test extends HttpServlet {
 		System.out.println("address: " + address);
 
 		// Send response to client:
-		response.setContentType("text/html");
-		PrintWriter writer = response.getWriter();
-		writer.println("<h1>Success</h1>");
-		writer.println("Received data: <br>");
-		writer.println("<p>Full Name: " + fullname + "</p>");
-		writer.println("<p>Address: " + address + "</p>");
+		/*
+		 * response.setContentType("text/html"); PrintWriter writer =
+		 * response.getWriter(); writer.println("<h1>Success</h1>");
+		 * writer.println("Received data: <br>"); writer.println("<p>Full Name: " +
+		 * fullname + "</p>"); writer.println("<p>Address: " + address + "</p>");
+		 */
+
+		// Redirect:
+		response.sendRedirect("index.html");
 
 	}
 
