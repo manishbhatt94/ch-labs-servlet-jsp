@@ -66,3 +66,21 @@ Steps:
   </tr>
 </table>
 
+# Project Directory Structure
+
+Below is directory structure of a (mostly) empty "Dynamic Web Project" created with Eclipse:
+
+Note: We have just one Servlet created as of now in `src/main/java/com.controller.Test`.
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-04-dir-struct-eclipse.png" 
+           alt="Directory Structure of 'Dynamic Web Project' - Eclipse Project Explorer" 
+           title="Directory Structure of 'Dynamic Web Project' - Eclipse Project Explorer" 
+           width="360" height="524">
+      <br />
+      <em>Figure: Directory Structure of 'Dynamic Web Project' - Eclipse Project Explorer</em>
+    </td>
+  </tr>
+</table>
