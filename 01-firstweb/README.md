@@ -6,7 +6,7 @@ Steps:
 1. Project Name: "01-firstweb"
 1. Confirm Target runtime is set to Apache Tomcat v9.0 (which we have already
     setup on Eclipse)
-1. Set value of Dynamic web module version to **2.3**.
+1. Set value of Dynamic web module version to **2.3** (this is for XML support).
 
 <table align="center">
   <tr>
@@ -20,3 +20,49 @@ Steps:
     </td>
   </tr>
 </table>
+
+# Create a "Test" Servlet
+
+1. File -> New -> Servlet
+1. Create Servlet wizard dialog window opens up.
+1. Wizard screen 1:
+    1. Enter Java package as "com.controller" or any name
+    1. Enter Class name as "Test"
+    1. Hit Next
+1. Wizard screen 2: Leave defaults, and hit Next.
+1. Wizard screen 3: Leave defaults, uncheck doPost, leave doGet checked.
+1. Hit Finish.
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-02-new-servlet-wizard-01.png" 
+           alt="Create Servlet wizard dialog - Screen 1" 
+           title="Create Servlet wizard dialog - Screen 1" 
+           width="500" height="327">
+      <br />
+      <em>Figure: Create Servlet wizard dialog - Screen 1</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-02-new-servlet-wizard-02.png" 
+           alt="Create Servlet wizard dialog - Screen 2" 
+           title="Create Servlet wizard dialog - Screen 2" 
+           width="480" height="400">
+      <br />
+      <em>Figure: Create Servlet wizard dialog - Screen 2</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-02-new-servlet-wizard-03.png" 
+           alt="Create Servlet wizard dialog - Screen 3" 
+           title="Create Servlet wizard dialog - Screen 3" 
+           width="480" height="400">
+      <br />
+      <em>Figure: Create Servlet wizard dialog - Screen 3</em>
+    </td>
+  </tr>
+</table>
+
