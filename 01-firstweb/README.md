@@ -8,8 +8,15 @@ Steps:
     setup on Eclipse)
 1. Set value of Dynamic web module version to **2.3**.
 
-<figure>
-  <p align="center"><b>Eclipse: New Dynamic Web Project</b></p>
-  <img src="docs-assets/images/fig-01-new-dynamic-web-project-wizard.png" alt="New Dynamic Web Project Wizard Dialog" width="600" height="704" loading="lazy" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-  <figcaption align="center"><i>Figure: New Dynamic Web Project Wizard Dialog</i></figcaption>
-</figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-01-new-dynamic-web-project-wizard.png" 
+           alt="New Dynamic Web Project Wizard Dialog" 
+           title="New Dynamic Web Project Wizard Dialog" 
+           width="600" height="704">
+      <br />
+      <em>Figure: New Dynamic Web Project Wizard Dialog</em>
+    </td>
+  </tr>
+</table>
