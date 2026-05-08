@@ -7,6 +7,12 @@ Steps:
 1. Confirm Target runtime is set to Apache Tomcat v9.0 (which we have already
     setup on Eclipse)
 1. Set value of Dynamic web module version to **2.3** (this is for XML support).
+    Version 3.0 onwards, XML support is removed in favour of annotations.
+    With XML, we get access to web.xml (which is the Deployment Descriptor file)
+    in which we can learn how to manually do the URL-Servlet mappings etc.
+    In newer versions of Dynamic web module (Version 3.0 onwards), we only get
+    support for annotation based URL mappings - which is a simpler way & the
+    modern way. But it is better to stick to web.xml for initial learning phase.
 
 <table align="center">
   <tr>
