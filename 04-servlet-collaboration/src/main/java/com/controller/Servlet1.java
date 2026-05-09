@@ -2,6 +2,7 @@ package com.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,10 @@ public class Servlet1 extends HttpServlet {
 
 		System.out.println("Validating request... [ name = {" + name + "}, address = {" + address + "} ].");
 		System.out.println("Request validation: Success.");
+
+		// RequestDispatcher that can be used to forward request to "Servlet2":
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("Servlet2");
+		requestDispatcher.forward(request, response);
 
 		System.out.println("\n=@=@=@=@=@=@=@= Servlet 1 - doPost Ends =@=@=@=@=@=@=@=\n");
 
