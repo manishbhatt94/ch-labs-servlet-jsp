@@ -21,6 +21,8 @@ public class Servlet2 extends HttpServlet {
 		System.out.println("Inserting into Database... [ name = {" + name + "}, address = {" + address + "} ].");
 		System.out.println("Database insertion: Success.");
 
+		response.getWriter().println("Servlet2: Request data write to DB successful!");
+
 		System.out.println("\n=#=#=#=#=#=#=#=#=#= Servlet 2 - doPost Ends =#=#=#=#=#=#=#=#=#=\n");
 
 	}
