@@ -2,12 +2,18 @@
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app id="WebApp_ID">
 	<display-name>03-servlet--context-config</display-name>
+
+	<context-param> <!-- Provided in the ServletContext object, shared by all servlets -->
+		<param-name>org-src-control-page</param-name>
+		<param-value>https://github.com/manishbhatt94/</param-value>
+	</context-param>
+
 	<servlet>
 		<servlet-name>Servlet1</servlet-name>
 		<display-name>Servlet1</display-name>
 		<description></description>
 		<servlet-class>com.controller.Servlet1</servlet-class>
-		<init-param>
+		<init-param> <!-- Provided only in Servlet1's ServletConfig object -->
 		    <param-name>conn-uri</param-name>
             <param-value>jdbc:mysql://localhost:3306/jfsseptkart</param-value>
 		</init-param>
@@ -17,11 +23,12 @@
 		<display-name>Servlet2</display-name>
 		<description></description>
 		<servlet-class>com.controller.Servlet2</servlet-class>
-		<init-param>
+		<init-param> <!-- Provided only in Servlet2's ServletConfig object -->
 		    <param-name>conn-uri</param-name>
             <param-value>mongodb://myUser:myPassword@localhost:27017</param-value>
 		</init-param>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>Servlet1</servlet-name>
 		<url-pattern>/Servlet1</url-pattern>

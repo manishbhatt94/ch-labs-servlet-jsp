@@ -3,6 +3,7 @@ package com.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +15,25 @@ public class Servlet1 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		System.out.println("\n============ Servlet1 ============\n");
+
+		// Get values from <servlet> element's <init-param> child elements, in web.xml
 		ServletConfig servletConfig = getServletConfig();
 		String connectionUri = servletConfig.getInitParameter("conn-uri");
 		System.out.println("Servlet1 's ServletConfig: [conn-uri] = " + connectionUri);
+		System.out.println();
+
+		// Get values from <context-param> elements (child of root <web-app> element),
+		// in web.xml
+		ServletContext servletContext = getServletContext();
+		String orgSourceCtrlLink = servletContext.getInitParameter("org-src-control-page");
+		System.out.println("ServletContext: [org-src-control-page] (Log from Servlet1) = " + orgSourceCtrlLink);
+		System.out.println();
+
+		System.out.println("Servlet1: Setting a new attribute [org-support-email] in ServletContext...");
+		servletContext.setAttribute("org-support-email", "get.support@dragon-ball-z.org.in");
+
+		System.out.println("\n~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%\n");
 
 		response.sendRedirect("index.html");
 
