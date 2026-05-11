@@ -10,7 +10,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>TestMvc</servlet-name>
-		<url-pattern>/TestMvc</url-pattern>
+		<url-pattern>/read-all</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
