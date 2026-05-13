@@ -16,6 +16,12 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
+		if (username.equals("raju") && password.equals("123456")) {
+			request.getRequestDispatcher("/WEB-INF/view/home.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
+		}
+
 	}
 
 }
