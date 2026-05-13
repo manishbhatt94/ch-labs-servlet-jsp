@@ -8,9 +8,18 @@
 </head>
 <body>
 
-	<h1>Home Page</h1>
-	
-	<p>Welcome to your Home Page, dear "logged-in user" 🐿️</p>
+	<header>
+		<nav>
+		    <ul>
+                <li><a href="logout">Logout</a></li>
+		    </ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Home Page</h1>
+		<p>Welcome to your Home Page, dear "logged-in user" 🐿️</p>
+	</main>
 
 </body>
 </html>
