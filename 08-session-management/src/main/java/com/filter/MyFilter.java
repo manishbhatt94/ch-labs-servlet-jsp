@@ -22,6 +22,8 @@ public class MyFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 
+		// ======= Filter PRE-PROCESSING logic STARTS here. =======
+
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 
@@ -62,8 +64,26 @@ public class MyFilter implements Filter {
 			return; // Stop further processing
 		}
 
-		// pass the request along the filter chain
+		// For purpose of finding out how long the request processing takes, we can
+		// capture the start time before passing the request along the filter chain:
+		long nanoTime = System.nanoTime();
+
+		// ======= Filter PRE-PROCESSING logic ENDS here. =======
+
+		// ############ PASS THE REQUEST ALONG THE FILTER CHAIN ############
 		chain.doFilter(request, response);
+		// ############ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ############
+
+		// ====== Filter POST-PROCESSING logic STARTS here. =======
+
+		// After the request has been processed by the servlet and any subsequent
+		// filters, we can capture the end time and calculate the elapsed time for
+		// processing the request:
+		long elapsedTime = System.nanoTime() - nanoTime;
+
+		System.out.println("Request processing time: " + (elapsedTime / 1_000.0) + " micro-seconds.");
+
+		// ======= Filter POST-PROCESSING logic ENDS here.
 	}
 
 	@Override
