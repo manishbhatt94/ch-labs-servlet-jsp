@@ -8,9 +8,8 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpFilter;
 
-public class MyFilter extends HttpFilter implements Filter {
+public class MyFilter implements Filter {
 
 	@Override
 	public void destroy() {
