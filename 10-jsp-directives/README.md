@@ -32,3 +32,9 @@ The JSP `page` directive is used to define global properties for an entire JSP p
 
 ## Include Directive: <%@ include ... %>
 
+Syntax:
+
+```jsp
+<%@ include file="header.jsp" %>
+```
+
