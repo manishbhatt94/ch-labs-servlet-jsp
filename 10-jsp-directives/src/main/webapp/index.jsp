@@ -38,6 +38,11 @@ PAGE Directive: <%@ page attribute1="value1" attribute2="value2" %>
 	
 	<%@ include file="ad-banner-main.jsp" %>
 	
+	<form action="home.jsp" method="post">
+        <input type="text" name="username" placeholder="Enter your username" required>
+        <input type="submit" value="Submit">
+    </form>
+	
 	<%-- When PAGE Directive's attribute: errorPage is set to "error.jsp",
     then when an exception occurs in the JSP page, the control will be transferred to "error.jsp" page.
      --%>
