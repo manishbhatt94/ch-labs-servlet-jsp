@@ -1,4 +1,4 @@
-# Project `11-jstl-intro`
+# Project &nbsp; <u>"11-jstl-intro"</u>
 
 Explores JSP Standard Tag Library (JSTL) usage - which makes our JSP pages
 a lot less complex - by removing need to use Scriptlets for majority of
@@ -84,3 +84,36 @@ library definition at the very top of any `.jsp` file:
 * **Verify Navigation**: Using **`Ctrl` + Left Click** on JSTL classes or
   standard library exceptions within associated Java Servlet files will
   automatically open the underlying source code file inside the editor workspace.
+
+# Information about JSTL
+
+Sources:
+- [www.geeksforgeeks.org/advance-java/jstl-jsp-standard-tag-library/](https://www.geeksforgeeks.org/advance-java/jstl-jsp-standard-tag-library/)
+
+## JSTL Tag Libraries
+
+| Library | Prefix | Description |
+| :------ | :----- | :---------: |
+| **[Core Tags](https://www.geeksforgeeks.org/java/jstl-core-tags/)** | `c` | General-purpose tags for variables, flow control, loops, and URL handling |
+| **[Formatting Tags](https://www.geeksforgeeks.org/java/jstl-formatting-tags/)** | `fmt` | For number, date, and message formatting with localization support |
+| **[SQL Tags](https://www.geeksforgeeks.org/java/jstl-sql-tags/)** | `sql` | For executing database queries and updates (for demo/testing only) |
+| XML Tags | `x` | For parsing and transforming XML documents |
+| **[Function Tags](https://www.geeksforgeeks.org/java/jstl-function-tags/)** | `fn` | Contains utility functions for string and collection operations |
+
+## Declare JSTL Tag Libraries in JSP
+
+After adding the dependency, include the required JSTL tag libraries at the top of your JSP file.
+
+```jsp
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+```
+
+Explanation:
+
+- **c:** Core tags (conditions, loops, variable handling)
+- **fmt:** Formatting and internationalization
+- **fn:** Utility functions for strings and collections
+
+These URIs are standard and fixed identifiers used by JSP to locate JSTL tags. They do not represent actual URLs.
