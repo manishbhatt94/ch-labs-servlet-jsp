@@ -19,7 +19,7 @@
 
 	<section>
 		<h2>Insert new data record</h2>
-		<form action="home.jsp" method="post">
+		<form action="insert.jsp" method="post">
 			<p>
 				<label for="name">Name: </label>
 				<input type="text" name="name" required id="name" placeholder="Enter your name" />
