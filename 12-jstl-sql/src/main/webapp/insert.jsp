@@ -9,6 +9,12 @@
 <meta charset="UTF-8">
 <title>Insert page</title>
 <style>
+html {
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	padding: 20px 40px;
+}
 code {
 	display: inline-block;
 	vertical-align: center;
@@ -17,6 +23,12 @@ code {
 	border-radius: 4px;
 	padding: 2px 6px;
 	background-color: #b1b1b1;
+}
+header {
+	margin-bottom: 60px;
+}
+section {
+	margin-bottom: 50px;
 }
 .page-subtitle {
     font-style: italic;
@@ -81,7 +93,7 @@ code {
 	<h2>Insert new record in the table (with &lt;sql:update&gt; Tag)</h2>
 	
 	<p>
-		Executed below DML query:<br>
+		Executed below DML (Data Manipulation Language) query:<br>
 		<code>INSERT INTO jstl_user (name, city) VALUES (?, ?);</code>
 	</p>
 
