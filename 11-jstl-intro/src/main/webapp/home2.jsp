@@ -64,12 +64,42 @@
 			</c:when>
 
 			<c:otherwise>
-				<p class="validation-success">
-					Great! Your name and city are different, and your city doesn't start with 'a'.
-					Welcome to our site!
-				</p>
+				<div class="validation-success">
+					<p>Great! Your name and city are different, and your city doesn't start with 'a'.
+					Welcome to our site!</p>
+					<table border="1">
+						<thead>
+							<tr>
+								<th>Param Name</th>
+								<th>Param Value</th>
+								<th>Param Length</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>name</td>
+								<td>${name}</td>
+								<td>${fn:length(name)} characters</td>
+							</tr>
+							<tr>
+								<td>city</td>
+								<td>${city}</td>
+								<td>${fn:length(city)} characters</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</c:otherwise>
 		</c:choose>
+	</div>
+	
+	<h2>Looping</h2>
+	<div>
+		<ul>
+			<c:forEach var="i" begin="91" end="95">
+				<li>${i}</li>
+			</c:forEach>
+		</ul>
 	</div>
 
 </body>
