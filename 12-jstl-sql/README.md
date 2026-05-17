@@ -46,3 +46,17 @@ directory of this project:
            browser.
         1. Pick the *sources* JAR file (like `jstl-1.2-sources.jar`).
         1. Click the **Apply** button, followed by **Apply and Close** button.
+
+## DB Table Pre-Creation
+
+We create the below table `jstl_user` for demo purposes of this project, under
+the database `ch_labs_jdbc_01`, using the below CREATE TABLE script:
+
+```sql
+CREATE TABLE `ch_labs_jdbc_01`.`jstl_user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
