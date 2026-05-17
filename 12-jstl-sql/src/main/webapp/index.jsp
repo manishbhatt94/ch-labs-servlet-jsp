@@ -8,11 +8,29 @@
 </head>
 <body>
 
-	<form action="home.jsp" method="post">
-		<input type="text" name="name" required placeholder="Enter your name" /><br>
-		<input type="text" name="city" required placeholder="Enter your city" /><br>
-		<input type="submit" value="Go to home1.jsp" />
-	</form>
+	<header>
+		<h1>Welcome to JSTL SQL Tags Demo Application</h1>
+		<nav>
+			<ul>
+				<li><a href="read.jsp">READ DATA</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section>
+		<h2>Insert new data record</h2>
+		<form action="home.jsp" method="post">
+			<p>
+				<label for="name">Name: </label>
+				<input type="text" name="name" required id="name" placeholder="Enter your name" />
+			</p>
+			<p>
+				<label for="city">City: </label>
+				<input type="text" name="city" required id="city" placeholder="Enter your city" />
+			</p>
+			<input type="submit" value="Insert Data" />
+		</form>
+	</section>
 
 </body>
 </html>
