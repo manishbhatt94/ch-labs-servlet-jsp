@@ -60,3 +60,53 @@ CREATE TABLE `ch_labs_jdbc_01`.`jstl_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
+
+## Demo screenshots
+
+Below are the screenshots of the web-application developed in this project,
+taken from Mozilla Firefox web browser.
+
+
+<table align="center" border="1" cellpadding="8">
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-01-index-jsp-insert-form-empty.png" 
+           alt="Index Page — Insert New Record Form - Empty" 
+           title="Index Page — Insert New Record Form - Empty" 
+           width="540" height="312" loading="lazy" border="1">
+      <br />
+      <em>Figure 1: Index Page — Insert New Record Form - Empty</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-02-index-jsp-insert-form-filled.png" 
+           alt="Index Page — Insert New Record Form - Filled" 
+           title="Index Page — Insert New Record Form - Filled" 
+           width="560" height="350" loading="lazy" border="1">
+      <br />
+      <em>Figure 2: Index Page — Insert New Record Form - Filled</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-03-insert-jsp-record-inserted.png" 
+           alt="Insert Page — New Record Inserted" 
+           title="Insert Page — New Record Inserted" 
+           width="600" height="499" loading="lazy" border="1">
+      <br />
+      <em>Figure 3: Insert Page — New Record Inserted</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs-assets/images/fig-04-read-jsp-show-records.png" 
+           alt="Read Page — Show Records" 
+           title="Read Page — Show Records" 
+           width="580" height="556" loading="lazy" border="1">
+      <br />
+      <em>Figure 4: Read Page — Show Records</em>
+    </td>
+  </tr>
+</table>
+
