@@ -3,13 +3,24 @@ package com.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "TestServlet", urlPatterns = { "/test-servlet", "/servlet-test", "/test" })
+// @formatter:off
+@WebServlet(
+		name = "TestServlet",
+		urlPatterns = { "/test-servlet", "/servlet-test", "/test" },
+		initParams = {
+				@WebInitParam(name = "conn-uri", value = "jdbc:mysql://localhost:3306/jfsseptkart"),
+				@WebInitParam(name = "weather-api-uri", value = "https://api.openweathermap.org/data/3.0/onecall")
+		}
+)
+// @formatter:on
 public class Test extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -17,6 +28,10 @@ public class Test extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		ServletConfig servletConfig = getServletConfig();
+		String connUri = servletConfig.getInitParameter("conn-uri");
+		String weatherApiUri = servletConfig.getInitParameter("weather-api-uri");
 
 		PrintWriter out = response.getWriter();
 
@@ -34,6 +49,8 @@ public class Test extends HttpServlet {
 				+ "</header>"
 				+ "<main>"
 				+ "<p>This page is brought to you by <strong>Test Servlet</strong></p>"
+				+ "<p>ServletConfig init-param 'conn-uri' value = \""+ connUri +"\"</p>"
+				+ "<p>ServletConfig init-param 'weather-api-uri' value = \""+ weatherApiUri +"\"</p>"
 				+ "<p>Goodbye!</p></main>"
 				+ "</body></html>");
 		// @formatter:on
