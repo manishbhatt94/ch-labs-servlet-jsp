@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -33,6 +34,9 @@ public class Test extends HttpServlet {
 		String connUri = servletConfig.getInitParameter("conn-uri");
 		String weatherApiUri = servletConfig.getInitParameter("weather-api-uri");
 
+		ServletContext servletContext = getServletContext();
+		String orgSrcControl = servletContext.getInitParameter("org-src-control-page");
+
 		PrintWriter out = response.getWriter();
 
 		// @formatter:off
@@ -49,8 +53,11 @@ public class Test extends HttpServlet {
 				+ "</header>"
 				+ "<main>"
 				+ "<p>This page is brought to you by <strong>Test Servlet</strong></p>"
+				+ "<h2>ServletConfig</h2>"
 				+ "<p>ServletConfig init-param 'conn-uri' value = \""+ connUri +"\"</p>"
 				+ "<p>ServletConfig init-param 'weather-api-uri' value = \""+ weatherApiUri +"\"</p>"
+				+ "<h2>ServletContext</h2>"
+				+ "<p>ServletContext context-param 'org-src-control-page' value = \""+ orgSrcControl +"\"</p>"
 				+ "<p>Goodbye!</p></main>"
 				+ "</body></html>");
 		// @formatter:on
