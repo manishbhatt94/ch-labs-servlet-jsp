@@ -53,4 +53,16 @@ public class ConnectionFactory {
 		hikariDataSource.close();
 	}
 
+	public static void close(AutoCloseable resource) {
+		// Note: Calling .close() on Connection will just return the Connection object
+		// back to Hikari's connection pool.
+		if (resource != null) {
+			try {
+				resource.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 }

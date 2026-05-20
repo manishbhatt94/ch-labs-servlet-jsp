@@ -9,6 +9,8 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import com.dao.ConnectionFactory;
+import com.dao.EmployeeDao;
+import com.dao.EmployeeDaoImpl;
 
 @WebListener
 public class EmployeeListener implements ServletContextListener {
@@ -26,6 +28,7 @@ public class EmployeeListener implements ServletContextListener {
 		ServletContext servletContext = sce.getServletContext();
 
 		mysqlPoolSetup(servletContext);
+		createSchema();
 
 	}
 
@@ -94,6 +97,13 @@ public class EmployeeListener implements ServletContextListener {
 		System.out.println("EmployeeListener#mysqlPoolDestroy(): Calling ConnectionFactory.closePool() "
 				+ "to destroy MySQL connection pool");
 		ConnectionFactory.closePool();
+	}
+
+	private void createSchema() {
+
+		EmployeeDao employeeDao = new EmployeeDaoImpl();
+		employeeDao.createTable();
+
 	}
 
 }

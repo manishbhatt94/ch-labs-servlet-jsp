@@ -55,3 +55,28 @@ Below are the libraries used:
       code with custom tags that offer commonly needed packaged functionality.
     - Version used: `1.2`.
     - MVN Repository Link: [javax.servlet/jstl/1.2](https://mvnrepository.com/artifact/javax.servlet/jstl/1.2)
+
+
+## Database Setup
+
+Developed & tested with MySQL Version 8.0.43 on Windows 11 OS.
+
+### Database Creation
+
+This is manually done as a one-time job, before application startup.
+
+**Database name:** `ch_servlets_employee_management`.
+
+Create using:
+
+```sql
+CREATE DATABASE ch_servlets_employee_management;
+```
+
+### Table(s) Creation
+
+This is done on application startup via a Listener (in fact, specifically a
+ServletContextListener).
+
+Care has been taken to include `IF NOT EXISTS` in the `CREATE TABLE` SQL script
+to not cause "Table already exists" errors.
