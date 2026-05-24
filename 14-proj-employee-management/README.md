@@ -42,8 +42,9 @@ Below are the libraries used:
     - MVN Repository Link: [com.mysql/mysql-connector-j/8.2.0](https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.2.0)
 1. **HikariCP**:<br>
     - HikariCP is a JDBC **Connection Pooling** library.
-    - Version used: `3.1.0`.
-    - MVN Repository Link: [com.zaxxer/HikariCP/3.1.0](https://mvnrepository.com/artifact/com.zaxxer/HikariCP/3.1.0)
+    - Version used: `4.0.3`.
+    - HikariCP's `4.0.3` version seems to be the last version that support Java 8, according to [https://github.com/brettwooldridge/HikariCP#artifacts](https://github.com/brettwooldridge/HikariCP#artifacts)
+    - MVN Repository Link: [com.zaxxer/HikariCP/4.0.3](https://mvnrepository.com/artifact/com.zaxxer/HikariCP/4.0.3)
 1. **SLF4J**:<br>
     (Since `org.slf4j.LoggerFactory` class is used by HikariCP)<br>
     - slf4j is a dependency of HikariCP.

@@ -15,14 +15,21 @@ public class ConnectionFactory {
 
 		System.out.println("ConnectionFactory#init(): Begin DB connection pool initialization work!");
 		try {
-			Class.forName(driver);
+			// Class.forName(driver);
 			System.out.println("ConnectionFactory#init(): Loaded JDBC driver class: " + driver);
 
 			System.out.println("ConnectionFactory#init(): Creating HikariConfig object...");
 			HikariConfig hikariConfig = new HikariConfig();
 			System.out.println("ConnectionFactory#init(): Created HikariConfig object. "
 					+ "Setting JDBC URL, username and password");
+			// @formatter:off
+			System.out.println("ConnectionFactory#init(): Using connection "
+					+ "details to configure HikariConfig object - "
+					+ "[driver(" + driver + "), url(" + url + "), username(" + username + "), "
+					+ "password(" + password + ")]");
+			// @formatter:on
 
+			hikariConfig.setDriverClassName(driver); // tell Hikari explicitly which driver to use
 			hikariConfig.setJdbcUrl(url);
 			hikariConfig.setUsername(username);
 			hikariConfig.setPassword(password);
@@ -34,6 +41,7 @@ public class ConnectionFactory {
 					+ "DB connection pool ready to be used!");
 
 		} catch (Exception e) {
+			System.out.println("ConnectionFactory#init(): Exception occurred while initializing DB connection pool!");
 			e.printStackTrace();
 		}
 

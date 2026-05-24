@@ -88,7 +88,6 @@ public class EmployeeListener implements ServletContextListener {
 			 */
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
