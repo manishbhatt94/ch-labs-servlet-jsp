@@ -21,7 +21,7 @@
 	<main>
 		<section>
 			<h2>New Employee Form</h2>
-			<form action="" method="post">
+			<form action="add-employee" method="post">
 				<p>
 					<label for="name-input">Employee Name: </label>
 					<input type="text" name="name" id="name-input" required="required" maxlength="100"
@@ -34,13 +34,16 @@
 				</p>
 				<p>
 					<label for="dob-input">Employee Date-of-Birth: </label>
-					<input type="date" name="dateOfBirth" id="dob-input" required="required" maxlength="100"
+					<input type="date" name="dob" id="dob-input" required="required" maxlength="100"
 						placeholder="Enter employee's date-of-birth (YYYY-MM-DD)...">
 				</p>
 				<p>
 					<label for="salary-input">Employee Salary: </label>
 					<input type="number" name="salary" id="salary-input" required="required" maxlength="100"
 						placeholder="Enter employee's salary...">
+				</p>
+				<p>
+					<button type="submit">Add Employee</button>
 				</p>
 			</form>
 		</section>
