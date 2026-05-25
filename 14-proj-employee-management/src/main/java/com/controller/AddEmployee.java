@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dto.AddEmployeeDto;
+import com.dto.AddEmployeeRequestDto;
+import com.service.EmployeeService;
+import com.service.EmployeeServiceImpl;
 
 @WebServlet(urlPatterns = { "/add-employee-view", "/add-employee" })
 public class AddEmployee extends HttpServlet {
@@ -31,14 +33,23 @@ public class AddEmployee extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
-			AddEmployeeDto addEmployeeDto = addEmployeeRequestToDto(request);
+			AddEmployeeRequestDto addEmployeeDto = addEmployeeRequestToDto(request);
+
+			EmployeeService employeeService = new EmployeeServiceImpl();
+			String resultMessage = employeeService.addEmployee(addEmployeeDto);
+
+			request.setAttribute("resultMessage", resultMessage);
+			request.getRequestDispatcher("/WEB-INF/view/addEmployee.jsp").forward(request, response);
+
 		} catch (Exception e) {
 			e.printStackTrace();
+			request.setAttribute("resultMessage", e.getMessage());
+			request.getRequestDispatcher("/WEB-INF/view/addEmployee.jsp").forward(request, response);
 		}
 
 	}
 
-	private AddEmployeeDto addEmployeeRequestToDto(HttpServletRequest request) {
+	private AddEmployeeRequestDto addEmployeeRequestToDto(HttpServletRequest request) {
 
 		String name = request.getParameter("name");
 		name = name == null ? null : name.trim();
@@ -56,9 +67,17 @@ public class AddEmployee extends HttpServlet {
 
 		if (name == null || name.isEmpty()) {
 			throw new IllegalArgumentException("Name is required");
+		} else if (name.length() < 2) {
+			throw new IllegalArgumentException("Name must be at least 2 characters long");
+		} else if (name.length() > 100) {
+			throw new IllegalArgumentException("Name must be less than 100 characters long");
 		}
 		if (address == null || address.isEmpty()) {
 			throw new IllegalArgumentException("Address is required");
+		} else if (address.length() < 4) {
+			throw new IllegalArgumentException("Address must be at least 4 characters long");
+		} else if (address.length() > 180) {
+			throw new IllegalArgumentException("Address must be less than 180 characters long");
 		}
 		if (dobRaw == null || dobRaw.isEmpty()) {
 			throw new IllegalArgumentException("Date of Birth is required");
@@ -83,7 +102,7 @@ public class AddEmployee extends HttpServlet {
 			salary = salary.setScale(4, BigDecimal.ROUND_HALF_UP);
 		}
 
-		AddEmployeeDto addEmployeeDto = new AddEmployeeDto();
+		AddEmployeeRequestDto addEmployeeDto = new AddEmployeeRequestDto();
 		addEmployeeDto.setName(name);
 		addEmployeeDto.setAddress(address);
 		addEmployeeDto.setDateOfBirth(dateOfBirth);

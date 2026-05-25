@@ -3,14 +3,14 @@ package com.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class AddEmployeeDto {
+public class AddEmployeeRequestDto {
 
 	private String name;
 	private String address;
 	private LocalDate dateOfBirth;
 	private BigDecimal salary;
 
-	public AddEmployeeDto() {
+	public AddEmployeeRequestDto() {
 		super();
 	}
 

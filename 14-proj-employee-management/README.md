@@ -81,3 +81,15 @@ ServletContextListener).
 
 Care has been taken to include `IF NOT EXISTS` in the `CREATE TABLE` SQL script
 to not cause "Table already exists" errors.
+
+```sql
+CREATE TABLE IF NOT EXISTS `employee` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `address` varchar(180) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `salary` decimal(19,4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
+
