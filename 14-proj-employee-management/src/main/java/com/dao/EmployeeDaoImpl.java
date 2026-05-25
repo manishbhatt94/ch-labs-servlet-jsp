@@ -2,10 +2,14 @@ package com.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.dto.AddEmployeeRequestDto;
+import com.dto.EmployeeDto;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 
@@ -75,6 +79,48 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			return "FAILED TO SAVE";
 		} finally {
 			ConnectionFactory.close(preparedStatement);
+			ConnectionFactory.close(connection);
+		}
+
+	}
+
+	@Override
+	public List<EmployeeDto> fetchEmployees() {
+
+		// @formatter:off
+		final String sql = "SELECT `id`, `name`, `address`, `date_of_birth`, `salary`"
+				+ "    FROM `employee` ORDER BY `id` ASC;";
+		// @formatter:on
+		System.out.println("EmployeeDaoImpl: SQL for SELECT:\n" + sql);
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		List<EmployeeDto> employeeList = new ArrayList<>();
+
+		try {
+
+			connection = ConnectionFactory.getConnection();
+			statement = connection.createStatement();
+
+			resultSet = statement.executeQuery(sql);
+
+			while (resultSet.next()) {
+				EmployeeDto employee = new EmployeeDto();
+				employee.setId(resultSet.getInt("id"));
+				employee.setName(resultSet.getString("name"));
+				employee.setAddress(resultSet.getString("address"));
+				employee.setDateOfBirth(resultSet.getDate("date_of_birth").toLocalDate());
+				employee.setSalary(resultSet.getBigDecimal("salary"));
+				employeeList.add(employee);
+			}
+			return employeeList;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return employeeList;
+		} finally {
+			ConnectionFactory.close(resultSet);
+			ConnectionFactory.close(statement);
 			ConnectionFactory.close(connection);
 		}
 
