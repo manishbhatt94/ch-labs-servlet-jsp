@@ -25,13 +25,13 @@ Recommendation:
 
 Recommendation: [Jenkov.com Servlet Tutorial](https://jenkov.com/tutorials/java-servlets/index.html)
 
-* Why: Jakob Jenkov’s tutorials are famous for being strictly factual, text-based, and devoid of "enterprise fluff." He isolates topics perfectly.
+* Why: Jakob Jenkov's tutorials are famous for being strictly factual, text-based, and devoid of "enterprise fluff." He isolates topics perfectly.
 * Use this for: Quick lookups on specific mechanisms like Filter, HttpSession, or Cookies without wading through 50 pages of intro text.
 
 
 ## 3. The "Spring Bridge": Connecting Servlet to Spring
 
-Recommendation: Marco Behler’s "Spring Web MVC" Guides
+Recommendation: Marco Behler's "Spring Web MVC" Guides
 
 * Why: Marco specifically writes for developers in your position. He explains exactly how the raw Servlet API (which you just learned) is wrapped by Spring’s DispatcherServlet.
 * Key Concept: Read his guide on how web.xml was replaced by ServletContainerInitializer in Spring Boot. [^3]
@@ -86,17 +86,17 @@ To avoid wasting time, adhere to this strict syllabus. The Servlet API is huge; 
    4. Go back to your Spring documentation; the "Web MVC" section will suddenly make perfect sense.
 
 
-[^1] [https://www.reddit.com](https://www.reddit.com/r/java/comments/43exua/learning_j2ee/)
-[^2] [https://medium.com](https://medium.com/@abhishekmalagi2002/before-spring-learn-jsp-servlets-24fc5596cbc4)
-[^3] [https://medium.com](https://medium.com/@abhishekmalagi2002/before-spring-learn-jsp-servlets-24fc5596cbc4)
-[^4] [https://blog.stackademic.com](https://blog.stackademic.com/these-9-spring-boot-features-made-me-question-my-entire-codebase-946360b564b8)
-[^5] [https://www.slainstitute.com](https://www.slainstitute.com/j2ee-tutorial-for-beginners-tutorial/)
-[^6] [https://www.youtube.com](https://www.youtube.com/watch?v=Rg8zopsxL0o&t=321)
-[^7] [https://www.reddit.com](https://www.reddit.com/r/developersIndia/comments/yeovml/how_do_i_get_good_at_java_springboot/)
-[^8] [https://medium.com](https://medium.com/javarevisited/in-depth-analysis-of-the-essence-of-spring-boot-request-processing-link-and-servlet-c51e14acd107)
-[^9] [https://medium.com](https://medium.com/javarevisited/in-depth-analysis-of-the-essence-of-spring-boot-request-processing-link-and-servlet-c51e14acd107)
-[^10] [https://medium.com](https://medium.com/@alxkm/chain-of-responsibility-in-java-a-practical-guide-7ab9f8c5dfcb)
-[^11] [https://www.certlibrary.com](https://www.certlibrary.com/blog/top-java-ee-frameworks-every-enterprise-developer-should-know/)
-[^12] [https://www.jessym.com](https://www.jessym.com/articles/a-complete-introduction-to-java-ee)
-[^13] [https://www.dice.com](https://www.dice.com/career-advice/java-skills-what-you-need-to-succeed)
-[^14] [https://www.youtube.com](https://www.youtube.com/watch?v=Ybfo8Dwactg&t=1245)
+[^1]: [https://www.reddit.com](https://www.reddit.com/r/java/comments/43exua/learning_j2ee/)
+[^2]: [https://medium.com](https://medium.com/@abhishekmalagi2002/before-spring-learn-jsp-servlets-24fc5596cbc4)
+[^3]: [https://medium.com](https://medium.com/@abhishekmalagi2002/before-spring-learn-jsp-servlets-24fc5596cbc4)
+[^4]: [https://blog.stackademic.com](https://blog.stackademic.com/these-9-spring-boot-features-made-me-question-my-entire-codebase-946360b564b8)
+[^5]: [https://www.slainstitute.com](https://www.slainstitute.com/j2ee-tutorial-for-beginners-tutorial/)
+[^6]: [https://www.youtube.com](https://www.youtube.com/watch?v=Rg8zopsxL0o&t=321)
+[^7]: [https://www.reddit.com](https://www.reddit.com/r/developersIndia/comments/yeovml/how_do_i_get_good_at_java_springboot/)
+[^8]: [https://medium.com](https://medium.com/javarevisited/in-depth-analysis-of-the-essence-of-spring-boot-request-processing-link-and-servlet-c51e14acd107)
+[^9]: [https://medium.com](https://medium.com/javarevisited/in-depth-analysis-of-the-essence-of-spring-boot-request-processing-link-and-servlet-c51e14acd107)
+[^10]: [https://medium.com](https://medium.com/@alxkm/chain-of-responsibility-in-java-a-practical-guide-7ab9f8c5dfcb)
+[^11]: [https://www.certlibrary.com](https://www.certlibrary.com/blog/top-java-ee-frameworks-every-enterprise-developer-should-know/)
+[^12]: [https://www.jessym.com](https://www.jessym.com/articles/a-complete-introduction-to-java-ee)
+[^13]: [https://www.dice.com](https://www.dice.com/career-advice/java-skills-what-you-need-to-succeed)
+[^14]: [https://www.youtube.com](https://www.youtube.com/watch?v=Ybfo8Dwactg&t=1245)

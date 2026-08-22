@@ -5,14 +5,14 @@ Steps:
 1. "New Dynamic Web Project" wizard dialog windows opens up.
 1. Project Name: "01-firstweb"
 1. Confirm Target runtime is set to Apache Tomcat v9.0 (which we have already
-    setup on Eclipse)
+  setup on Eclipse<sup>#</sup>)
 1. Set value of Dynamic web module version to **2.3** (this is for XML support).
-    Version 3.0 onwards, XML support is removed in favour of annotations.
-    With XML, we get access to web.xml (which is the Deployment Descriptor file)
-    in which we can learn how to manually do the URL-Servlet mappings etc.
-    In newer versions of Dynamic web module (Version 3.0 onwards), we only get
-    support for annotation based URL mappings - which is a simpler way & the
-    modern way. But it is better to stick to web.xml for initial learning phase.
+  Version 3.0 onwards, XML support is removed in favour of annotations.
+  With XML, we get access to web.xml (which is the Deployment Descriptor file)
+  in which we can learn how to manually do the URL-Servlet mappings etc.
+  In newer versions of Dynamic web module (Version 3.0 onwards), we only get
+  support for annotation based URL mappings - which is a simpler way & the
+  modern way. But it is better to stick to web.xml for initial learning phase.
 
 <table align="center" border="1" cellpadding="8">
   <tr>
@@ -26,6 +26,15 @@ Steps:
     </td>
   </tr>
 </table>
+
+<br>
+
+> [!NOTE]
+> <sup>#</sup> For setting up Apache Tomcat in Eclipse, please read README for Spring MVC
+> introductory project hosted here:
+> [github.com/manishbhatt94/ch-labs-spring/blob/main/12-mvc-dispatcher-servlet-handler-mapping/README.md](https://github.com/manishbhatt94/ch-labs-spring/blob/main/12-mvc-dispatcher-servlet-handler-mapping/README.md)
+
+<br>
 
 # Create a "Test" Servlet
 
