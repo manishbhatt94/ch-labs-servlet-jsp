@@ -19,6 +19,47 @@ standard servlet container. Because it is a separate library, web application
 developers must explicitly download and bundle the JSTL library files within
 their individual web applications.
 
+```
++-------------------------------------------------------------------------------+
+| Container Layer (Provided by Tomcat 9)                                        |
+| - javax.servlet-api (Servlet 4.0/3.1)                                         |
+| - javax.servlet.jsp-api (JSP 2.3)                                             |
+| - javax.el-api (Unified EL 3.0)                                               |
++---------------------------------------+---------------------------------------+
+                                        | (Tomcat does NOT bundle JSTL)
+                                        v
++-------------------------------------------------------------------------------+
+| Application Layer (Your WEB-INF/lib)                                          |
+| - Spring 5.3.39 JARs (Core, Beans, Context, Web, WebMVC)                      |
+| - JSTL 1.2 (jstl-1.2.jar OR taglibs-standard-spec + impl)                     |
++-------------------------------------------------------------------------------+
+```
+
+#### 1. The javax.* vs jakarta.* Namespace Boundary
+
+Tomcat 9 belongs to the Java EE 8 generation and uses the `javax.*` package namespace
+(`javax.servlet`, `javax.servlet.jsp.jstl`).
+
+**JSTL 1.2** is written for the `javax.*` namespace.
+
+**Why not JSTL 2.0 or 3.0?**
+
+JSTL 2.0+ was renamed to Jakarta EE and uses `jakarta.servlet.jsp.jstl.*`.
+If you put JSTL 2.0/3.0 on Tomcat 9, it will fail with
+`ClassNotFoundException: javax.servlet.jsp.jstl...` because Tomcat 9 does not understand
+the `jakarta.*` namespace. (Jakarta JSTL is strictly for Tomcat 10+).
+
+#### 2. Why Doesn't Tomcat 9 Include JSTL Automatically?
+
+Tomcat is a **Servlet/JSP Container**, NOT a full Java EE Application Server (like WildFly or WebLogic).
+
+Tomcat natively provides the Servlet API (`servlet-api.jar`), JSP API (`jsp-api.jar`), and Expression
+Language (`el-api.jar`) in its own `lib/` directory.
+
+JSTL was standardized as an optional add-on library. Therefore, the web container expects the
+web application *itself* to supply the JSTL implementation inside `WEB-INF/lib/`.
+
+
 ---
 
 ## Setup Instructions
@@ -37,6 +78,8 @@ Download the required binary and source files from the official Maven Central Re
 1. Download the developer source code file: **`jstl-1.2-sources.jar`**
 
 *Note: A separate Javadoc archive is not required. The `-sources.jar` file contains the complete documentation comments embedded directly within the source code files.*
+
+*Also, this JAR packages both the JSTL API specifications (interfaces) and the implementation classes together into a single file.*
 
 ### Step 2: Add the Binary JAR to the Project
 
@@ -75,7 +118,7 @@ To verify that the library is configured correctly, add the standard core tag
 library definition at the very top of any `.jsp` file:
 
 ```jsp
-<%@ taglib prefix="c" uri="http://sun.com" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 ```
 
 * **Verify Javadocs**: Insert a standard tag (e.g., `<c:out value="test" />`)
@@ -108,6 +151,7 @@ After adding the dependency, include the required JSTL tag libraries at the top 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 ```
 
 Explanation:
@@ -115,5 +159,6 @@ Explanation:
 - **c:** Core tags (conditions, loops, variable handling)
 - **fmt:** Formatting and internationalization
 - **fn:** Utility functions for strings and collections
+- **sql:** Lets us run SQL just using tags in JSP
 
 These URIs are standard and fixed identifiers used by JSP to locate JSTL tags. They do not represent actual URLs.
